@@ -1,0 +1,94 @@
+@import './breakpoints.scss';
+@import './mixins.scss';
+
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway-Light'), local('Raleway Light'), url('../fonts/Raleway-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway-Medium'), local('Raleway Medium'), url('../fonts/Raleway-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway-Bold'), local('Raleway Bold'), url('../fonts/Raleway-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway-ExtraBold'), local('Raleway ExtraBold'), url('../fonts/Raleway-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway-Black'), local('Raleway Black'), url('../fonts/Raleway-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+// ------------------------------------
+//      V A R I A B L E S
+// ------------------------------------
+
+$font-family: 'Raleway', 'Fira Sans', sans-serif;
+$primary: #0a5c2e;
+$primary-light: #ffffff;
+$primary-dark: #04060a;
+$secondary-dark: #2b2e30;
+
+// ------------------------------------
+//      S Y S T E M
+// ------------------------------------
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html,
+body {
+    font-family: $font-family;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    overflow: hidden;
+}
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    @include respond-to('s') {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    @include respond-to('ipad') {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    @include respond-to('phone') {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+
+// ------------------------------------
+//      B L O C K S
+// ------------------------------------
+
+@import './blocks/header.scss';
+@import './blocks/footer.scss';
+
+// ------------------------------------
+//      S E C T I O N S
+// ------------------------------------
+@import './blocks/general.scss';
+@import './blocks/photos.scss';
+@import './blocks/info.scss';
+@import './blocks/parmaster.scss';

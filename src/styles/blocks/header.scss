@@ -1,0 +1,175 @@
+.header {
+    z-index: 100;
+    width: 100%;
+    position: absolute;
+    top: 17px;
+    padding: 16px 0;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    &__container {
+        max-width: 1840px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        .header__logo {
+            @include respond-to('ipad') {
+                width: 178px;
+                height: 44px;
+                object-fit: cover;
+                object-position: left;
+            }
+            @include respond-to('phone') {
+                width: 178px;
+                height: 30px;
+                object-fit: contain;
+            }
+        }
+        .nav {
+            margin-left: auto;
+            ul {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 32px;
+                @include respond-to('ipad') {
+                    gap: 24px;
+                }
+                @include respond-to('small') {
+                    padding-top: 60px;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 32px;
+                }
+                li {
+                    a {
+                        text-decoration: none;
+                        color: $primary-light;
+                        font-size: 24px;
+                        font-weight: 700;
+                        @include respond-to('ipad') {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            @include respond-to('small') {
+                opacity: 0;
+                transform: translateX(-100vw);
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                position: absolute;
+                background-color: #444444;
+                top: -17px;
+                left: 0;
+                right: 0;
+                height: 100vh;
+            }
+            @include respond-to('phone') {
+                top: 0;
+            }
+        }
+        .header__nav--active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .header__button {
+            display: none;
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            width: 24px;
+            height: 24px;
+            margin-left: auto;
+            @include respond-to('small') {
+                display: block;
+            }
+            &-menu {
+                display: none;
+                background-color: transparent;
+                padding: 0;
+                border: none;
+                width: 24px;
+                height: 24px;
+                position: relative;
+                @include respond-to('small') {
+                    display: block;
+                }
+                span {
+                    position: absolute;
+                    left: 2px;
+                    right: 2px;
+                    height: 2px;
+                    background-color: $primary-light;
+                    transition: transform 0.3s ease-in-out;
+                    &:first-child {
+                        top: 4px;
+                        transform: rotate(0);
+                    }
+                    &:nth-child(2) {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &:last-child {
+                        bottom: 4px;
+                        transform: rotate(0);
+                    }
+                }
+                &--active {
+                    span {
+                        &:first-child {
+                            top: 50%;
+                            transform: rotate(45deg);
+                        }
+                        &:nth-child(2) {
+                            display: none;
+                        }
+                        &:last-child {
+                            top: 50%;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+        }
+        .header__link {
+            background-color: $primary;
+            text-decoration: none;
+            color: $primary-light;
+            padding: 8px 12px;
+            font-size: 24px;
+            font-weight: 700;
+            clip-path: polygon(0 0, 96% 0%, 100% 20%, 100% 100%, 100% 100%, 4% 100%, 0% 80%, 0 0);
+            span {
+                @include respond-to('small') {
+                    display: none;
+                }
+            }
+            svg {
+                display: none;
+                width: 24px;
+                height: 24px;
+                @include respond-to('small') {
+                    display: block;
+                }
+            }
+            @include respond-to('ipad') {
+                font-size: 18px;
+                padding: 8px 12px;
+            }
+            @include respond-to('small') {
+                clip-path: none;
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+        @include respond-to('ipad') {
+            gap: 24px;
+        }
+        @include respond-to('small') {
+            gap: 16px;
+        }
+    }
+    @include respond-to('phone') {
+        top: 0;
+        padding: 12px 0;
+    }
+}

@@ -1,0 +1,170 @@
+.parmaster {
+    position: relative;
+    background-color: $primary-dark;
+    &__img-bg {
+        position: absolute;
+        left: 48%;
+        top: -300px;
+        z-index: 1;
+        @include respond-to('laptop-mdpi') {
+            top: -265px;
+            left: 45%;
+            transform: scale(0.8);
+        }
+        @include respond-to('ipad') {
+            top: -255px;
+            left: 40%;
+        }
+        @include respond-to('small') {
+            top: -195px;
+            // left: 40%;
+            left: unset;
+            right: 0;
+            transform: none;
+            width: 400px;
+            // height: 64px;
+        }
+        @include respond-to('phone') {
+            top: -247px;
+            left: unset;
+            // right: -201px;
+            left: 26%;
+            transform: none;
+            width: 242px;
+            height: 64px;
+        }
+    }
+    &__container {
+        padding-bottom: 128px;
+        position: relative;
+        z-index: 3;
+        img {
+            border-radius: 500px / 350px;
+            position: absolute;
+            top: -210px;
+            bottom: 66px;
+            left: -160px;
+            @include respond-to('laptop-mdpi') {
+                left: 50%;
+                transform: translateX(-50%);
+                top: -100px;
+                border-radius: 0;
+            }
+            @include respond-to('phone') {
+                top: -156px;
+                left: -12px;
+                max-width: 412px;
+                transform: none;
+            }
+        }
+        .parmaster__wrap {
+            position: relative;
+            margin-left: auto;
+            max-width: 921px;
+            .parmaster__title {
+                margin: 0;
+                color: $primary-light;
+                font-size: 65px;
+                font-weight: 800;
+                line-height: 106%;
+                margin-bottom: 32px;
+                @include respond-to('phone') {
+                    max-width: 260px;
+                    font-size: 28px;
+                    margin-bottom: 16px;
+                }
+            }
+            .parmaster__text {
+                margin: 0;
+                color: $primary-light;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 130%;
+                margin-bottom: 32px;
+                @include respond-to('phone') {
+                    font-size: 16px;
+                    margin-bottom: 16px;
+                }
+            }
+            .parmaster__button {
+                border: none;
+                background: linear-gradient(90deg, rgba(10, 92, 46, 1) 0%, rgba(34, 140, 80, 1) 100%);
+                text-decoration: none;
+                color: $primary-light;
+                padding: 16px 24px;
+                font-size: 24px;
+                font-weight: 700;
+                clip-path: polygon(0 0, 96% 0%, 100% 20%, 100% 100%, 100% 100%, 4% 100%, 0% 80%, 0 0);
+                @include respond-to('phone') {
+                    margin-top: 8px;
+                    width: 100%;
+                    font-size: 18px;
+                    padding: 12px 18px;
+                    clip-path: polygon(0 0, 97% 0%, 100% 22%, 100% 100%, 100% 100%, 3% 100%, 0% 79%, 0 0);
+                }
+            }
+            @include respond-to('laptop-mdpi') {
+                max-width: unset;
+                margin-left: 0;
+            }
+        }
+        @include respond-to('laptop-mdpi') {
+            padding-top: 400px;
+        }
+        @include respond-to('phone') {
+            padding-top: 135px;
+            padding-bottom: 32px;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -216px;
+        left: -195px;
+        right: 33%;
+        height: 500px;
+        background-color: $primary-dark;
+        border-radius: 770px / 250px;
+        z-index: 2;
+        @include respond-to('laptop-mdpi') {
+            top: -200px;
+            height: 325px;
+        }
+        @include respond-to('ipad') {
+            top: -175px;
+            height: 325px;
+            right: 29%;
+        }
+        @include respond-to('phone') {
+            top: -216px;
+            left: -230px;
+            right: 33%;
+            height: 500px;
+            border-radius: 770px / 425px;
+        }
+    }
+    &::after {
+        min-width: 1616px;
+        content: '';
+        position: absolute;
+        top: -146px;
+        left: 26%;
+        right: -195px;
+        height: 500px;
+        background-color: $primary-dark;
+        border-radius: 770px / 250px;
+        z-index: 2;
+        @include respond-to('small') {
+            top: -165px;
+        }
+        @include respond-to('phone') {
+            min-width: unset;
+            top: -193px;
+            left: 0;
+            right: -105px;
+            height: 500px;
+            border-radius: 776px / 250px;
+        }
+    }
+}
